@@ -33,23 +33,6 @@ router.get('/', function (req, res) {
     res.render('home',{files: files});
 });
 
-router.get('/item/:id/', function (req, res) {
-
-	var stuff = {title:'A Stack of Floppy Disks', body: '2014, 12"X12"X12", ACRYLIC, SPANDEX, CUSTOM ELECTRONICS, ARDUINO'+req.params.id+''};
-
-    res.render('item',stuff);
-    console.log(req.params.id);
-});
-
-router.delete('/item/:id/' , function(req,res) {
-	MongoClient.connect(url, function(err, db) {
-		assert.equal(null, err);
-		removeItem(db, req.params.id, function(results) {
-				res.send('Deleted!');
-	        	db.close();
-        });
-	});
-});
 
 app.use('/', router);
 

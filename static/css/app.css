@@ -9,6 +9,9 @@ video {
 	background-color: black;
 	box-shadow: 0 0 20px black;
 }
+#videoPlayer {
+
+}
 #videoPlayer h3 {
 	color: #444;
 	webkit-transition:	all 300ms linear;
