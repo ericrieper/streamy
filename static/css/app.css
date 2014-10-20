@@ -1,0 +1,25 @@
+body {
+	background-color: #222;
+}
+
+body,p,h1,h2,h3,h4,h5 {
+	color: #ddd;
+}
+video {
+	background-color: black;
+	box-shadow: 0 0 20px black;
+}
+#videoPlayer h3 {
+	color: #444;
+	webkit-transition:	all 300ms linear;
+	transition:			all 300ms linear;
+}
+#videoPlayer h3:hover {
+	color: #ddd;
+}
+.tab-bar {
+	box-shadow: 0 0 5px black;
+}
+.inner-wrap {
+	min-height: 100vh;
+}

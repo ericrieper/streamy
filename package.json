@@ -1,0 +1,13 @@
+{
+  "name": "Streamy",
+  "version": "1.0.0",
+  "description": "Serve and stream local video media.",
+  "main": "index.js",
+  "dependencies": {
+  "express":"~4.9.7",
+  "express-handlebars":"~1.1"
+  },
+  "private": true,
+  "author": "Eric Rieper",
+  "homepage": "http://ericrieper.com"
+}
