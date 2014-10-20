@@ -9,15 +9,26 @@ video {
 	background-color: black;
 	box-shadow: 0 0 20px black;
 }
+
+a {
+	webkit-transition:	all 100ms ease;
+	transition:			all 100ms ease;
+}
 .right-small{
 	text-align:center;
 	font-size: 25px;
 }
 .right-small a {
-	color: #ccc;
+	color: #888;
 }
 .right-small a:hover{
 	color: #fff;
+}
+.videoItem i {
+	margin-right: 0.66667rem;
+	display: inline-block;
+	height: 2em;
+	float: left;
 }
 #videoPlayer {
 
@@ -49,8 +60,6 @@ video {
 }
 .dlSquare a{
 	color: #333;
-	webkit-transition:	all 300ms ease;
-	transition:			all 300ms ease;
 }
 .dlSquare a:hover{
 	color: #fff;

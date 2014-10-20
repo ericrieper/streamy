@@ -11,10 +11,10 @@ $( document ).ready(function() {
 	$( ".videoItem a" ).each(function( index ) {
 		var icon;
 		if ($(this).hasClass("video-mp4")){
-			icon = '<i class="fi-video"></i> ';
+			icon = '<i class="fi-video"></i>';
 		}
 		else if ($(this).hasClass("video-avi")){
-			icon = '<i class="fi-download"></i> '
+			icon = '<i class="fi-download"></i>'
 		}
 		var newHtml = icon+cleanTitle($(this).text());
 	  $(this).html(newHtml);
