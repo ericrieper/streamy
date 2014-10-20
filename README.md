@@ -4,16 +4,13 @@ Streamy
 
 Serve and play local video files in browser.
 
-----------
 
 
-Installation
--------------
+##Installation##
 
 Install via package.json with `npm install`
 
-Usage
--------
+##Usage##
 
 Place `.mp4` video files in `/static/media`
 
