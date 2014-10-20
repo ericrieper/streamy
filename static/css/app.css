@@ -39,10 +39,10 @@ video {
 }
 .dlSquare{
 	background-color: black;
-	border-radius: 15px;
+	border-radius: 10px;
 	padding: 30px;
 	text-align: center;
-	box-shadow: 0 0 50px black;
+	box-shadow: 0 0 50px rgba(0,0,0,0.7);
 }
 .dlSquare>a>.fi-download {
 	font-size: 10em;
