@@ -14,6 +14,8 @@ app.set('view engine', 'handlebars');
 
 /*----------- FILES  -----------*/
 
+var files = new Array;
+
 /*
 for (var i in files) {
   console.log('Model Loaded: ' + files[i]);
@@ -51,10 +53,26 @@ function getFiles(){
 
 	files = fs.readdirSync(__dirname+'/static/media/');
 	var tempFiles = new Array;
+	var tempFile;
 	for(var i in files) {
 	   if(path.extname(files[i]) === ".mp4") {
-	       tempFiles.push(files[i]);
+	       tempFile = {filename:files[i],type:'mp4'}
+	       tempFiles.push(tempFile);
+	   }
+	   else if (path.extname(files[i]) === ".avi"){
+	   		tempFile = {filename:files[i], type:"avi"};
+	   		tempFiles.push(tempFile);
 	   }
 	}
+	files = null;
 	files = tempFiles;
 }
+
+
+
+
+
+
+
+
+

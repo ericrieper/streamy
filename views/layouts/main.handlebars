@@ -23,7 +23,7 @@
     <nav class="tab-bar top-bar" data-topbar role="navigation" data-options="sticky_on: large">
 
       <section class="middle tab-bar-section">
-        <h1 class="title">Streamy!</h1>
+        <h1 class="title">Streamy! <i class="fi-heart" style="color: #ff0072;"></i></h1>
       </section>
 
       <section class="right-small">
@@ -35,7 +35,7 @@
       <ul class="off-canvas-list">
       <li><label>Videos</label></li>
         {{# each files}}
-          <li class="videoItem" id="item-{{this}}"><a href="#" class="barf">{{this}}</a></li>
+          <li class="videoItem" id=""><a href="#" id="item-{{this.filename}}" class="video-{{this.type}}">{{this.filename}}</a></li>
           {{/each}}
       </ul>
     </aside>
