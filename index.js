@@ -3,8 +3,11 @@ var express = require('express'),
 	router = express.Router();
 var fs = require('fs');
 var path = require('path');
+var chalk = require('chalk');
 
 var app = express();
+
+var startArgs = process.argv.slice(2);
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -37,7 +40,9 @@ router.get('/', function (req, res) {
 
 app.use('/', router);
 
-app.listen(37605);
+// port 37605
+app.listen(startArgs[0]);
+console.log(chalk.inverse('\n Starting Streamy! on port ' + startArgs[0] + '. \n'));
 
 
 /* ---------- FUNCTIONS --------- */

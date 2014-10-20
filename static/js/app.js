@@ -14,7 +14,8 @@ $( document ).ready(function() {
 });
 
 
-$('.videoItem').on('click',function() {
+$('.videoItem').on('click',function(e) {
+	e.preventDefault();
 	$('.right-off-canvas-toggle').click();
 	$('video').show();
 	var vidSRC = $(this).attr('id').substring(5);
