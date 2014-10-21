@@ -45,7 +45,7 @@ $('.videoItem a').on('click',function(e) {
 	    video.play();
 	    $('#videoPlayer h3').text(vidTitle);
 	}
-	else if ($(this).hasClass("video-avi")){
+	else {
 		console.log("Got an AVI!!");
 		video.pause();
 		$('.right-off-canvas-toggle').click();
