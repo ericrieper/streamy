@@ -80,6 +80,10 @@ function getFiles(callback){
 			   		tempFile = {filename:files[i].replace(root+'/',''), prettyTitle:prettyTitle, type:"avi"};
 			   		tempFiles.push(tempFile);
 			   }
+				else if (path.extname(files[i]) === ".mkv"){
+			   		tempFile = {filename:files[i].replace(root+'/',''), prettyTitle:prettyTitle, type:"mkv"};
+			   		tempFiles.push(tempFile);
+			   }
 			}
 
 			files = null;
