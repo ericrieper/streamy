@@ -3,6 +3,7 @@ var express = require('express'),
 	router = express.Router();
 var fs = require('fs');
 var path = require('path');
+var recursive = require('recursive-fs');
 var chalk = require('chalk');
 
 var app = express();
@@ -35,8 +36,9 @@ router.use(function(req, res, next) {
 
 
 router.get('/', function (req, res) {
-	getFiles();
-    res.render('home',{files: files});
+	getFiles(function(result){
+		res.render('home',{files: result});
+	});
 });
 
 
@@ -49,27 +51,46 @@ console.log(chalk.inverse('\n Starting Streamy! on port ' + startArgs[0] + '. \n
 
 /* ---------- FUNCTIONS --------- */
 
-function getFiles(){
+function getFiles(callback){
 
-	files = fs.readdirSync(__dirname+'/static/media/');
+
 	var tempFiles = new Array;
 	var tempFile;
-	for(var i in files) {
-	   if(path.extname(files[i]) === ".mp4") {
-	       tempFile = {filename:files[i],type:'mp4'}
-	       tempFiles.push(tempFile);
-	   }
-	   else if (path.extname(files[i]) === ".avi"){
-	   		tempFile = {filename:files[i], type:"avi"};
-	   		tempFiles.push(tempFile);
-	   }
-	}
-	files = null;
-	files = tempFiles;
+
+	var root = path.resolve(__dirname+'/static/media');
+	recursive.readdirr(root, function (err, dirs, fileList) {
+	    if (err) {
+	        console.log(err);
+	    } else {
+	        console.log('DONE!');
+	        files = fileList;
+			        
+			var tempFiles = new Array;
+			var tempFile;
+			for(var i in files) {
+
+				var prettyTitle = files[i].split('/').slice(-1)[0];
+
+			   if(path.extname(files[i]) === ".mp4") {
+
+			       tempFile = {filename:files[i].replace(root+'/',''), prettyTitle:prettyTitle,type:'mp4'}
+			       tempFiles.push(tempFile);
+			   }
+			   else if (path.extname(files[i]) === ".avi"){
+			   		tempFile = {filename:files[i].replace(root+'/',''), prettyTitle:prettyTitle, type:"avi"};
+			   		tempFiles.push(tempFile);
+			   }
+			}
+
+			files = null;
+			files = tempFiles;
+	    }
+	    console.log('Late tempfiles: ' + JSON.stringify(tempFiles));
+	    callback(tempFiles);
+	});
+
+
 }
-
-
-
 
 
 
