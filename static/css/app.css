@@ -30,6 +30,11 @@ a {
 	height: 2em;
 	float: left;
 }
+
+.videoItem i .fi-display {
+	color: #90A949;
+}
+
 #videoPlayer {
 
 }
